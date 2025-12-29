@@ -143,11 +143,11 @@ export default function Navbar() {
 
           {link.subLinks && (
             <ChevronDown 
-              size={window.innerWidth > 768 ? 16 : 20} 
-              className={`transition-transform duration-300 ease-in-out
-                ${openDropdown === link.name ? 'rotate-180 text-blue-600' : 'text-gray-400'}
-              `} 
-            />
+  className={`transition-transform duration-300 ease-in-out
+    w-5 h-5 md:w-4 md:h-4
+    ${openDropdown === link.name ? 'rotate-180 text-blue-600' : 'text-gray-400'}
+  `} 
+/>
           )}
         </div>
 
