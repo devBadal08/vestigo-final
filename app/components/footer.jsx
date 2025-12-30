@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* 3. Industries (Spans 2 Columns for the double list) */}
           <div className="lg:col-span-2">
-            <h3 className="text-white font-bold text-[11px] uppercase tracking-[0.2em] mb-7 relative inline-block">
+            <h3 className="text-white font-bold text-[11px] uppercase tracking-[0.2em] ml-17 mb-7 relative inline-block">
               Industries Works
               <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-blue-600"></span>
             </h3>
