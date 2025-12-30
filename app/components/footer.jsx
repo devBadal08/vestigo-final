@@ -56,7 +56,43 @@ export default function Footer() {
               <li><Link href="/company/ourpartners" className="hover:text-blue-400 transition-colors">Our Partners</Link></li>
             </ul>
           </div>
-
+          
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/industries/automobile" className="hover:text-blue-400 transition-colors">Auto Mobile</Link></li>
+              <li><Link href="/industries/BFSI" className="hover:text-blue-400 transition-colors">BFSI</Link></li>
+              <li><Link href="/industries/chemical&pharmaceuticals" className="hover:text-blue-400 transition-colors">Chemical & Pharmaceuticals</Link></li>
+              <li><Link href="/industries/e-commerce" className="hover:text-blue-400 transition-colors">E-Commerce</Link></li>
+              </ul>
+          </div>
+           <div>
+            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/industries/engineering" className="hover:text-blue-400 transition-colors">Engineering</Link></li>
+              <li><Link href="/industries/greenenergy" className="hover:text-blue-400 transition-colors">Green Energy</Link></li>
+              <li><Link href="/industries/hospital&education" className="hover:text-blue-400 transition-colors">Hospital & Education</Link></li>
+              <li><Link href="/industries/hospitality" className="hover:text-blue-400 transition-colors">Hospitality</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/industries/it" className="hover:text-blue-400 transition-colors">IT & TECH</Link></li>
+              <li><Link href="/industries/packging" className="hover:text-blue-400 transition-colors">Packging</Link></li>
+              <li><Link href="/industries/papermills" className="hover:text-blue-400 transition-colors">Paper Mills</Link></li>
+              <li><Link href="/industries/plastic" className="hover:text-blue-400 transition-colors">Plastic</Link></li>
+              </ul>
+          </div>
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/industries/shipping&odccargo" className="hover:text-blue-400 transition-colors">Shipping & ODC CArgo</Link></li>
+              <li><Link href="/industries/textile" className="hover:text-blue-400 transition-colors">Textile</Link></li>
+              <li><Link href="/industries/SME&MSME" className="hover:text-blue-400 transition-colors">SME&MSME</Link></li>
+              <li><Link href="/industries/wood&lanivates" className="hover:text-blue-400 transition-colors">Wood & Lamination</Link></li>
+            </ul>
+          </div>
           {/* 3. Services & Resources */}
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Services</h3>
@@ -93,7 +129,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-xs">
-              © {new Date().getFullYear()} Vestigo Insurance Brokers. All rights reserved.
+              © {new Date().getFullYear()} Vestigo Insurance Brokers. All rights reserved. Desgning By MOGA ROHAN.
             </p>
 
             <div className="flex gap-8 text-xs font-medium">
