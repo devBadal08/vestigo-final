@@ -13,133 +13,104 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative z-10 bg-[#0F172A] text-slate-400">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-10">
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          {/* 1. Logo & About */}
-          <div className="space-y-6">
-            <Image
-              src="/logo.svg"
-              alt="Vestigo Logo"
-              width={140}
-              height={50}
-              className="invert"
-            />
-            <p className="text-sm leading-relaxed">
-              Vestigo delivers innovative digital insurance solutions that help businesses 
-              grow, scale, and stay protected in an ever-changing global market.
-            </p>
-            {/* Social Media Links with Circles */}
-            <div className="flex gap-3 pt-2">
-              {socialLinks.map((social) => (
-                <Link 
-                  key={social.name} 
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* 2. Quick Links - Company */}
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Company</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/company/whoweare" className="hover:text-blue-400 transition-colors">Who We Are</Link></li>
-              <li><Link href="/company/whyus" className="hover:text-blue-400 transition-colors">Why Us</Link></li>
-              <li><Link href="/company/ourteam" className="hover:text-blue-400 transition-colors">Our Team</Link></li>
-              <li><Link href="/company/ourpartners" className="hover:text-blue-400 transition-colors">Our Partners</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/industries/automobile" className="hover:text-blue-400 transition-colors">Auto Mobile</Link></li>
-              <li><Link href="/industries/BFSI" className="hover:text-blue-400 transition-colors">BFSI</Link></li>
-              <li><Link href="/industries/chemical&pharmaceuticals" className="hover:text-blue-400 transition-colors">Chemical & Pharmaceuticals</Link></li>
-              <li><Link href="/industries/e-commerce" className="hover:text-blue-400 transition-colors">E-Commerce</Link></li>
-              </ul>
-          </div>
-           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/industries/engineering" className="hover:text-blue-400 transition-colors">Engineering</Link></li>
-              <li><Link href="/industries/greenenergy" className="hover:text-blue-400 transition-colors">Green Energy</Link></li>
-              <li><Link href="/industries/hospital&education" className="hover:text-blue-400 transition-colors">Hospital & Education</Link></li>
-              <li><Link href="/industries/hospitality" className="hover:text-blue-400 transition-colors">Hospitality</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/industries/it" className="hover:text-blue-400 transition-colors">IT & TECH</Link></li>
-              <li><Link href="/industries/packging" className="hover:text-blue-400 transition-colors">Packging</Link></li>
-              <li><Link href="/industries/papermills" className="hover:text-blue-400 transition-colors">Paper Mills</Link></li>
-              <li><Link href="/industries/plastic" className="hover:text-blue-400 transition-colors">Plastic</Link></li>
-              </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Industries Works</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/industries/shipping&odccargo" className="hover:text-blue-400 transition-colors">Shipping & ODC CArgo</Link></li>
-              <li><Link href="/industries/textile" className="hover:text-blue-400 transition-colors">Textile</Link></li>
-              <li><Link href="/industries/SME&MSME" className="hover:text-blue-400 transition-colors">SME&MSME</Link></li>
-              <li><Link href="/industries/wood&lanivates" className="hover:text-blue-400 transition-colors">Wood & Lamination</Link></li>
-            </ul>
-          </div>
-          {/* 3. Services & Resources */}
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Services</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/solutions" className="hover:text-blue-400 transition-colors">Risk Solutions</Link></li>
-              <li><Link href="/industries" className="hover:text-blue-400 transition-colors">Industries</Link></li>
-              <li><Link href="/blogs" className="hover:text-blue-400 transition-colors">Latest Insights</Link></li>
-              <li><Link href="/careers" className="hover:text-blue-400 transition-colors">Careers</Link></li>
-            </ul>
-          </div>
-
-          {/* 4. Direct Contact */}
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Get In Touch</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <Mail size={18} className="text-blue-500 shrink-0" />
-                <span className="text-slate-300">info@vestigo.in</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone size={18} className="text-blue-500 shrink-0" />
-                <span className="text-slate-300">+91 98765 43210</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-blue-500 shrink-0" />
-                <span className="text-slate-300">Ahmedabad, Gujarat, India</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-slate-800 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs">
-              © {new Date().getFullYear()} Vestigo Insurance Brokers. All rights reserved. Desgning By MOGA ROHAN.
-            </p>
-
-            <div className="flex gap-8 text-xs font-medium">
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Support</Link>
-            </div>
-          </div>
+  <footer className="bg-[#0B1120] pt-20 pb-10 text-slate-400 border-t border-slate-800/50">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Main Grid: Using 5-column layout on large screens for perfect spacing */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 items-start">
+      
+      {/* 1. Logo & About (1 Column) */}
+      <div className="lg:col-span-1 space-y-6">
+        <Image
+          src="/logo.svg"
+          alt="Vestigo Logo"
+          width={130}
+          height={40}
+          className="invert opacity-90"
+        />
+        <p className="text-sm leading-relaxed pr-4">
+          Innovative digital insurance solutions protecting businesses in an ever-changing global market.
+        </p>
+        <div className="flex gap-3 pt-2">
+          {socialLinks.map((social) => (
+            <Link 
+              key={social.name} 
+              href={social.href}
+              className="w-9 h-9 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300 border border-slate-700/50"
+            >
+              {social.icon}
+            </Link>
+          ))}
         </div>
       </div>
-    </footer>
+
+      {/* 2. Company (1 Column) */}
+      <div className="lg:col-span-1">
+        <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-7 relative">
+          Company
+          <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-blue-600"></span>
+        </h3>
+        <ul className="space-y-4 text-[13px]">
+          <li><Link href="/company/whoweare" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Who We Are</Link></li>
+          <li><Link href="/company/whyus" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Why Us</Link></li>
+          <li><Link href="/company/ourteam" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Our Team</Link></li>
+          <li><Link href="/company/ourpartners" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Our Partners</Link></li>
+        </ul>
+      </div>
+
+      {/* 3. Industries (2 Columns Spanning) */}
+      <div className="lg:col-span-2">
+        <h3 className="text-white font-bold text-sm uppercase tracking-widest ml-20 mb-7 relative">
+          Industries Works
+          <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-blue-600"></span>
+        </h3>
+        <div className="grid grid-cols-2 gap-4 text-[13px]">
+          <ul className="space-y-4">
+            <li><Link href="/industries/automobile" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Auto Mobile</Link></li>
+            <li><Link href="/industries/BFSI" className="hover:text-blue-400 transition-all hover:translate-x-1 block">BFSI</Link></li>
+            <li><Link href="/industries/chemical&pharmaceuticals" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Chemical & Pharma</Link></li>
+            <li><Link href="/industries/e-commerce" className="hover:text-blue-400 transition-all hover:translate-x-1 block">E-Commerce</Link></li>
+            <li><Link href="/industries/engineering" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Engineering</Link></li>
+            <li><Link href="/industries/greenenergy" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Green Energy</Link></li>
+            <li><Link href="/industries/hospital&education" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Hospital & Education</Link></li>
+            <li><Link href="/industries/hospitality" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Hospitality</Link></li>
+          </ul>
+          <ul className="space-y-4">
+            <li><Link href="/industries/it" className="hover:text-blue-400 transition-all hover:translate-x-1 block">IT & TECH</Link></li>
+            <li><Link href="/industries/packging" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Packaging</Link></li>
+            <li><Link href="/industries/papermills" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Paper Mills</Link></li>
+            <li><Link href="/industries/plastic" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Plastic</Link></li>
+            <li><Link href="/industries/shipping&odccargo" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Shipping & Cargo</Link></li>
+            <li><Link href="/industries/textile" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Textile</Link></li>
+            <li><Link href="/industries/SME&MSME" className="hover:text-blue-400 transition-all hover:translate-x-1 block">SME & MSME</Link></li>
+            <li><Link href="/industries/wood&lanivates" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Wood & Lamination</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 4. Services (1 Column) */}
+      <div className="lg:col-span-1">
+        <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-7 relative">
+          Services
+          <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-blue-600"></span>
+        </h3>
+        <ul className="space-y-4 text-[13px]">
+          <li><Link href="/solutions" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Risk Solutions</Link></li>
+          <li><Link href="/industries" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Industries</Link></li>
+          <li><Link href="/blogs" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Latest Insights</Link></li>
+          <li><Link href="/careers" className="hover:text-blue-400 transition-all hover:translate-x-1 block">Careers</Link></li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Bottom Bar */}
+    <div className="mt-20 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-slate-500 uppercase tracking-widest">
+      <p>&copy; {new Date().getFullYear()} Vestigo Risk Solutions. All rights reserved. CREATED BY ROHAN MOGA</p>
+      <div className="flex gap-6">
+        <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+        <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+      </div>
+    </div>
+  </div>
+</footer>
   );
 }
