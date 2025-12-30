@@ -39,7 +39,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-5">
               <Link
-                href="/contact"
+                href="/contacts"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-1"
               >
                 Get Started Now
