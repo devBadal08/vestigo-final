@@ -62,7 +62,7 @@ export default function HomePage() {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl w-full max-w-[400px]">
               <Image
-                src="/logo.svg" // Check karo ke tame 'public' folder ma aa name thi image rakhi che.
+                src="/logo.jpg" // Check karo ke tame 'public' folder ma aa name thi image rakhi che.
                 alt="Insurance Hero"
                 width={400}
                 height={500}
