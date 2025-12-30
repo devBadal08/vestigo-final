@@ -13,7 +13,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0B1120] pt-20 pb-10 text-slate-400 border-t border-slate-800/50">
+    <footer className="bg-[#0B1120] pt-5 pb-10 text-slate-400 border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Main Grid: 6-column logic to keep everything in one line on Desktop */}
@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest">
+        <div className="mt-10 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest">
           <p>&copy; {new Date().getFullYear()} Vestigo Risk Solutions. CREATED BY ROHAN MOGA</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
