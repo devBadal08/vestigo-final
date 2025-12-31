@@ -18,6 +18,13 @@ import {
   ShieldCheck,
   Handshake,
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCar, faLaptopCode, faCogs, faHotel, 
+  faLandmark, faCartShopping, faHospitalUser, faShip, 
+  faBoxOpen, faScroll, faFlaskVial, faLeaf, 
+  faPrescriptionBottle, faShirt, faIndustry, faTree 
+} from '@fortawesome/free-solid-svg-icons';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -61,26 +68,25 @@ const NAV_DATA = [
     icon: <Briefcase size={20} />,
     desc: 'Protection designed for every industry.',
     subLinks: [
-      { name: 'Automotive', href: '/industries/automobile', icon: <Briefcase size={16} /> },
-      { name: 'IT & Tech', href: '/industries/it', icon: <Zap size={16} /> },
-      { name: 'Engineering', href: '/industries/engineering', icon: <ShieldCheck size={16} /> },
-      { name: 'Hospitality', href: '/industries/hospitality', icon: <Users size={16} /> },
-      
-      {  name: 'BFSI', href: '/industries/BFSI', icon: <Briefcase size={16} /> },
-      { name: 'E-Commerce', href: '/industries/e-commerce', icon: <Zap size={16} /> },
-      { name: 'Hospital & Education', href: '/industries/hospital&education', icon: <ShieldCheck size={16} /> },
-      {  name: 'Shipping', href: '/industries/shipping&odccargo', icon: <Users size={16} /> },
-      
-      {name: 'Packaging', href: '/industries/packaging', icon: <Briefcase size={16} /> },
-      { name: 'Paper Mills', href: '/industries/papermills', icon: <Zap size={16} /> },
-      {  name: 'Chemical & Pharmacy', href: '/industries/chemical&pharmaceuticals', icon: <ShieldCheck size={16} /> },
-      { name: 'Green Energy', href: '/industries/greenenergy' , icon: <Users size={16} /> },
+      { name: 'Automotive', href: '/industries/automobile', icon: <FontAwesomeIcon icon={faCar} /> },
+  { name: 'IT & Tech', href: '/industries/it', icon: <FontAwesomeIcon icon={faLaptopCode} /> },
+  { name: 'Engineering', href: '/industries/engineering', icon: <FontAwesomeIcon icon={faCogs} /> },
+  { name: 'Hospitality', href: '/industries/hospitality', icon: <FontAwesomeIcon icon={faHotel} /> },
 
-      {  name: 'Plastic', href: '/industries/plastic', icon: <Briefcase size={16} /> },
-      {  name: 'Textile', href: '/industries/textile', icon: <Zap size={16} /> },
-      { name: 'SME & MSME', href: '/industries/SME&MSME', icon: <ShieldCheck size={16} /> },
-      { name: 'Wood & Laminates', href: '/industries/wood&laminates' , icon: <Users size={16} /> },
-      
+  { name: 'BFSI', href: '/industries/BFSI', icon: <FontAwesomeIcon icon={faLandmark} /> },
+  { name: 'E-Commerce', href: '/industries/e-commerce', icon: <FontAwesomeIcon icon={faCartShopping} /> },
+  { name: 'Hospital & Education', href: '/industries/hospital&education', icon: <FontAwesomeIcon icon={faHospitalUser} /> },
+  { name: 'Shipping', href: '/industries/shipping&odccargo', icon: <FontAwesomeIcon icon={faShip} /> },
+
+  { name: 'Packaging', href: '/industries/packaging', icon: <FontAwesomeIcon icon={faBoxOpen} /> },
+  { name: 'Paper Mills', href: '/industries/papermills', icon: <FontAwesomeIcon icon={faScroll} /> },
+  { name: 'Chemical & Pharmacy', href: '/industries/chemical&pharmaceuticals', icon: <FontAwesomeIcon icon={faFlaskVial} /> },
+  { name: 'Green Energy', href: '/industries/greenenergy', icon: <FontAwesomeIcon icon={faLeaf} /> },
+
+  { name: 'Plastic', href: '/industries/plastic', icon: <FontAwesomeIcon icon={faPrescriptionBottle} /> },
+  { name: 'Textile', href: '/industries/textile', icon: <FontAwesomeIcon icon={faShirt} /> },
+  { name: 'SME & MSME', href: '/industries/SME&MSME', icon: <FontAwesomeIcon icon={faIndustry} /> },
+  { name: 'Wood & Laminates', href: '/industries/wood&laminates', icon: <FontAwesomeIcon icon={faTree} /> },
     ],
   },
 
