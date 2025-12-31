@@ -98,7 +98,7 @@ export default function Navbar() {
     <div className={`relative flex items-center justify-between transition-all duration-300 px-6 py-2 rounded-full bg-blue-50 shadow-lg border border-blue-100/50`}>
       
       <Link href="/" className="relative z-[110] flex-shrink-0">
-        <Image src="/logo.svg" alt="Logo" width={100} height={32} className="w-auto h-7 md:h-8 object-contain" priority />
+        <Image src="/logo.svg" alt="Logo" width={100} height={32} className="w-auto h-15 md:h-8 object-contain" priority />
       </Link>
 
       <nav className="hidden lg:flex items-center gap-1">
