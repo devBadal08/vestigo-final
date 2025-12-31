@@ -60,7 +60,7 @@ const NAV_DATA = [
       { name: 'Green Energy', href: '/industries/greenenergy' },
       { name: 'Hospital & Education', href: '/industries/hospital&education' },
       { name: 'Hospitality', href: '/industries/hospitality' },
-      { name: 'Packaging', href: '/industries/packging' },
+      { name: 'Packaging', href: '/industries/packaging' },
       { name: 'Paper Mills', href: '/industries/papermills' },
       { name: 'Plastic', href: '/industries/plastic' },
       { name: 'Textile', href: '/industries/textile' },
