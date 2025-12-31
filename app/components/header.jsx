@@ -198,41 +198,41 @@ export default function Header() {
           }`}
         >
           {item.subLinks.map((sub) => {
-            const isSubActive = pathname === sub.href;
+    const isSubActive = pathname === sub.href;
 
-            return (
-              <Link
-                key={sub.name}
-                href={sub.href}
-                className="group flex flex-col-2 items-start gap-3 p-3 rounded-xl
-                bg-white/40 backdrop-blur-md border border-white/20
-                hover:bg-white/70 transition-all duration-300
-                shadow-sm hover:shadow-lg"
-              >
-                {/* ICON/AVATAR */}
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center
-                  bg-gradient-to-br from-[#4FC3F7] to-[#2F6BFF]
-                  text-white shadow-md group-hover:scale-110 transition-transform"
-                >
-                  {sub.icon}
-                </div>
+    return (
+      <Link
+        key={sub.name}
+        href={sub.href}
+        className="group flex flex-row items-center gap-3 p-3 rounded-xl
+        bg-white/40 backdrop-blur-md border border-white/20
+        hover:bg-white/70 transition-all duration-300
+        shadow-sm hover:shadow-lg"
+      >
+        {/* ICON/AVATAR */}
+        <div
+          className="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-center
+          bg-gradient-to-br from-[#4FC3F7] to-[#2F6BFF]
+          text-white shadow-md group-hover:scale-110 transition-transform"
+        >
+          {sub.icon}
+        </div>
 
-                {/* TEXT */}
-                <div className="relative justify-center mt-2 ">
-                  <p className={`font-bold text-[11px] leading-tight uppercase tracking-wider
-                    ${isSubActive ? 'text-blue-700' : 'text-[#1C2A7D]'}`}
-                  >
-                    {sub.name}
-                  </p>
-                  <span
-                    className={`absolute left-0 -bottom-1 h-[2px] bg-[#C9D600] rounded-full transition-all
-                    ${isSubActive ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'}`}
-                  />
-                </div>
-              </Link>
-            );
-          })}
+        {/* TEXT */}
+        <div className="relative flex items-center">
+          <p className={`font-bold text-[11px] leading-tight uppercase tracking-wider
+            ${isSubActive ? 'text-blue-700' : 'text-[#1C2A7D]'}`}
+          >
+            {sub.name}
+          </p>
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] bg-[#C9D600] rounded-full transition-all
+            ${isSubActive ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'}`}
+          />
+        </div>
+      </Link>
+    );
+})}
         </div>
       </div>
     </motion.div>
