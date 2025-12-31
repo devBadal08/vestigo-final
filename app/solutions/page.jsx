@@ -124,65 +124,64 @@ export default function Solutions() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
       
-      {/* --- DYNAMIC HEADER --- */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-white">
-        {/* Animated Background Element */}
-        <motion.div 
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
-        />
+     
 
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold mb-6"
-          >
-            <Sparkles size={16} /> Our Specialized Portfolio
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter"
-          >
-            Precision <span className="text-blue-600">Protection.</span>
-          </motion.h1>
-          
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
-            We don't offer generic plans. We engineer insurance architectures 
-            specifically designed for your industry's DNA.
-          </p>
+      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-[#0a192f]">
+  
+  {/* Background Glow Effect - Creates depth on the blue background */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] -z-0" />
 
-          {/* --- PILL FILTER --- */}
-          <div className="flex flex-wrap justify-center gap-3 p-2 bg-slate-100/50 backdrop-blur-md rounded-[2.5rem] w-fit mx-auto border border-slate-200">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-                  activeCategory === cat 
-                  ? 'text-white' 
-                  : 'text-slate-500 hover:text-slate-900'
-                }`}
-              >
-                {activeCategory === cat && (
-                  <motion.div 
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-blue-600 rounded-full shadow-lg shadow-blue-500/30"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{cat}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto relative z-10 text-center">
+    {/* Specialized Portfolio Badge */}
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 border border-blue-500/20"
+    >
+      <Sparkles size={16} /> Our Specialized Portfolio
+    </motion.div>
+    
+    {/* Main Heading */}
+    <motion.h1 
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter"
+    >
+      Precision <span className="text-blue-500">Protection.</span>
+    </motion.h1>
+    
+    {/* Description Text */}
+    <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+      We don't offer generic plans. We engineer insurance architectures 
+      specifically designed for your industry's DNA.
+    </p>
+
+    {/* --- GLASSMORPISM PILL FILTER --- */}
+    <div className="flex flex-wrap justify-center gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[2.5rem] w-fit mx-auto border border-white/10">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => setActiveCategory(cat)}
+          className={`relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
+            activeCategory === cat 
+            ? 'text-white' 
+            : 'text-slate-400 hover:text-white'
+          }`}
+        >
+          {activeCategory === cat && (
+            <motion.div 
+              layoutId="activeTab"
+              className="absolute inset-0 bg-blue-600 rounded-full shadow-lg shadow-blue-500/30"
+              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            />
+          )}
+          <span className="relative z-10">{cat}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+      
 
       {/* --- GRID SECTION --- */}
       <section className="max-w-7xl mx-auto px-6 py-20">
