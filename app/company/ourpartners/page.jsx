@@ -36,37 +36,24 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* --- INFINITE SLIDER SECTION --- */}
-      <section className="py-20 overflow-hidden bg-white">
-        <div className="relative">
-          {/* Left & Right Gradient Overlays for smooth fade effect */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
-
-          {/* Slider Container */}
-          <motion.div 
-            className="flex gap-12 items-center whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ 
-              duration: 20, 
-              repeat: Infinity, 
-              ease: "linear" 
-            }}
-          >
-            {duplicatedPartners.map((partner, idx) => (
-              <div 
-                key={idx}
-                className="flex items-center justify-center min-w-[200px] h-32 px-8 rounded-2xl bg-slate-50 border border-slate-100 group hover:border-blue-200 transition-colors"
-              >
-                {/* Replace this with <img src={...} /> for actual logos */}
-                <span className="text-xl font-bold text-slate-400 group-hover:text-blue-600 transition-colors tracking-tight">
-                  {partner}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    {/* --- LIGHT BLUE PARTNER MARQUEE --- */}
+<div className="py-20 bg-[#F0F7FF] border-y border-blue-100 overflow-hidden">
+  <motion.div 
+    animate={{ x: [0, -1200] }}
+    transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+    className="flex gap-24 whitespace-nowrap items-center"
+  >
+    {["HDFC ERGO", "TATA AIG", "ICICI Lombard", "Star Health", "Bajaj Allianz", "HDFC ERGO", "TATA AIG", "ICICI Lombard", "HDFC ERGO", "TATA AIG"].map((p, i) => (
+      <span 
+        key={i} 
+        className="text-6xl font-black text-blue-300/40 hover:text-blue-500 hover:scale-105 transition-all duration-700 uppercase italic tracking-tighter cursor-default select-none"
+        style={{ textShadow: '0 2px 10px rgba(7, 20, 80, 0.1)' }}
+      >
+        {p}
+      </span>
+    ))}
+  </motion.div>
+</div>
 
       {/* --- PARTNERSHIP TYPES GRID --- */}
       <section className="max-w-7xl mx-auto px-6 py-24">
@@ -122,3 +109,6 @@ export default function Partners() {
     </main>
   );
 }
+
+
+

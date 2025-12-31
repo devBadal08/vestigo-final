@@ -1,30 +1,64 @@
 import React from 'react';
+import Link from 'next/link';
 import { 
   Factory, 
   Settings, 
   Zap, 
   ShieldCheck, 
   Globe2, 
-  BarChart3, 
   ArrowRight, 
   ChevronRight,
   Users,
-  Building2
+  Building2,
+  Briefcase,
+  Car,
+  Layers,
+  FlaskConical,
+  Trees,
+  Stethoscope,
+  Hotel,
+  Package,
+  Box,
+  Cpu,
+  Scissors,
+  Ship,
+  FileText,
+  Hammer
 } from 'lucide-react';
 
 const IndustriesHome = () => {
-  const sectors = [
-    { title: "Automotive", desc: "Digital assembly lines aur DMS systems.", icon: <Settings className="w-8 h-8" /> },
+  // Mapping your subLinks data with relevant icons
+  const industriesDirectory = [
+    { name: 'Automotive', href: '/industries/automobile', icon: <Car className="w-5 h-5" /> },
+    { name: 'BFSI', href: '/industries/BFSI', icon: <Briefcase className="w-5 h-5" /> },
+    { name: 'E-Commerce', href: '/industries/e-commerce', icon: <Layers className="w-5 h-5" /> },
+    { name: 'IT & Tech', href: '/industries/it', icon: <Cpu className="w-5 h-5" /> },
+    { name: 'Engineering', href: '/industries/engineering', icon: <Settings className="w-5 h-5" /> },
+    { name: 'Shipping', href: '/industries/shipping&odccargo', icon: <Ship className="w-5 h-5" /> },
+    { name: 'Chemical & Pharmacy', href: '/industries/chemical&pharmaceuticals', icon: <FlaskConical className="w-5 h-5" /> },
+    { name: 'Green Energy', href: '/industries/greenenergy', icon: <Trees className="w-5 h-5" /> },
+    { name: 'Hospital & Education', href: '/industries/hospital&education', icon: <Stethoscope className="w-5 h-5" /> },
+    { name: 'Hospitality', href: '/industries/hospitality', icon: <Hotel className="w-5 h-5" /> },
+    { name: 'Packaging', href: '/industries/packging', icon: <Package className="w-5 h-5" /> },
+    { name: 'Paper Mills', href: '/industries/papermills', icon: <FileText className="w-5 h-5" /> },
+    { name: 'Plastic', href: '/industries/plastic', icon: <Box className="w-5 h-5" /> },
+    { name: 'Textile', href: '/industries/textile', icon: <Scissors className="w-5 h-5" /> },
+    { name: 'SME & MSME', href: '/industries/SME&MSME', icon: <Users className="w-5 h-5" /> },
+    { name: 'Wood & Laminates', href: '/industries/wood&lanivates', icon: <Hammer className="w-5 h-5" /> },
+  ];
+
+  const featuredSectors = [
     { title: "Manufacturing", desc: "Industry 4.0 aur IoT integration.", icon: <Factory className="w-8 h-8" /> },
     { title: "Energy & Power", desc: "Smart grid aur resource management.", icon: <Zap className="w-8 h-8" /> },
-    { title: "Infrastructure", desc: "Large-scale project tracking tools.", icon: <Building2 className="w-8 h-8" /> }
+    { title: "Infrastructure", icon: <Building2 className="w-8 h-8" />, desc: "Large-scale project tracking tools." },
+    { title: "BFSI", icon: <Briefcase className="w-8 h-8" />, desc: "High-security financial digital shields." }
   ];
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
+      
       {/* 1. Global Hero Section */}
       <section className="relative bg-[#0a192f] py-28 px-6 overflow-hidden">
-        {/* Animated Background Mesh */}
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12">
@@ -37,15 +71,12 @@ const IndustriesHome = () => {
               with Intelligence.
             </h1>
             <p className="text-lg text-slate-400 max-w-xl mb-10">
-              Vestigo Enterprise Suite provides specialized technology stacks for the world's most demanding industrial sectors. Efficiency, digitized.
+              Vestigo Enterprise Suite provides specialized technology stacks for the world s most demanding industrial sectors. Efficiency, digitized.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2">
+              <Link href="/industries" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2">
                 Explore Solutions <ArrowRight size={18} />
-              </button>
-              <button className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-lg font-bold transition-all">
-                Our Impact
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -78,13 +109,14 @@ const IndustriesHome = () => {
               <h2 className="text-4xl font-bold text-slate-900 mb-4">Sectors We Empower</h2>
               <p className="text-slate-500">Comprehensive digital transformation across diverse industrial landscapes.</p>
             </div>
-            <button className="text-blue-600 font-bold flex items-center gap-1 hover:gap-3 transition-all">
-              View All Industries <ChevronRight size={20} />
-            </button>
+            <Link href="/industries" className="text-blue-600 font-bold flex items-center gap-1 hover:gap-3 transition-all">
+              View Full Directory <ChevronRight size={20} />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sectors.map((s, i) => (
+          {/* Featured Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {featuredSectors.map((s, i) => (
               <div key={i} className="group p-8 rounded-2xl border border-slate-100 bg-white hover:bg-blue-600 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-600/20">
                 <div className="w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                   {s.icon}
@@ -94,6 +126,31 @@ const IndustriesHome = () => {
                 <div className="h-1 w-0 group-hover:w-full bg-white/30 transition-all duration-500 rounded-full"></div>
               </div>
             ))}
+          </div>
+
+          {/* --- SUB-PART: DYNAMIC DIRECTORY FROM YOUR subLinks --- */}
+          <div className="border-t border-slate-100 pt-16">
+            <div className="flex items-center gap-4 mb-10">
+               <div className="h-px bg-blue-600 w-12"></div>
+               <h3 className="text-xl font-bold text-slate-900 uppercase tracking-tight">Safety Shields for Every Sector</h3>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {industriesDirectory.map((ind, i) => (
+                <Link 
+                  key={i} 
+                  href={ind.href}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-slate-50 bg-slate-50/50 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all group cursor-pointer"
+                >
+                  <div className="p-2 rounded-lg bg-white text-slate-400 group-hover:text-blue-600 group-hover:scale-110 transition-all shadow-sm">
+                    {ind.icon}
+                  </div>
+                  <span className="font-medium text-slate-700 group-hover:text-blue-700 text-sm md:text-base">
+                    {ind.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -105,7 +162,7 @@ const IndustriesHome = () => {
             <div>
                <h2 className="text-4xl font-bold mb-6">Built for the <br /><span className="text-blue-600">Global Economy</span></h2>
                <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-                 Humaara platform global standards (ISO, GDPR, NIST) ko follow karta hai, taaki aapka business duniya mein kahin bhi bina kisi rukaawat ke scale kar sake.
+                 Humaara platform global standards (ISO, GDPR, NIST) ko follow karta hai, taaki aapka business duniya mein kahin bhi scale kar sake.
                </p>
                <div className="grid grid-cols-2 gap-8">
                   <div className="flex gap-4 items-start">
@@ -140,19 +197,18 @@ const IndustriesHome = () => {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8">Ready to modernize your Industry?</h2>
           <p className="text-slate-500 text-lg mb-12">
-            Apne operations ko digitize karein aur productivity ko nayi oonchaiyon par le jayein. Aaj hi demo schedule karein.
+            Apne operations ko digitize karein aur productivity ko nayi oonchaiyon par le jayein.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20">
+            <Link href="/contacts" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center">
               Start Free Trial
-            </button>
-            <button className="bg-slate-900 hover:bg-slate-800 text-white px-12 py-4 rounded-full font-bold transition-all">
+            </Link>
+            <Link href="/contacts" className="bg-slate-900 hover:bg-slate-800 text-white px-12 py-4 rounded-full font-bold transition-all text-center">
               Talk to Specialist
-            </button>
+            </Link>
           </div>
         </div>
       </section>
-
       
     </div>
   );
