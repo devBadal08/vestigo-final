@@ -124,7 +124,7 @@ export default function Footer() {
             <ul className="space-y-5 text-[12px]">
               <li>
                 <a href="tel:+1234567890" className="group flex items-center gap-3 hover:text-white transition-all">
-                  <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center group-hover:bg-blue-600 transition-all border border-slate-700/50 flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center group-hover:bg-600 transition-all border border-slate-700/50 flex-shrink-0">
                     <Phone size={12} className="text-blue-400 group-hover:text-white" />
                   </div>
                   <span className="font-medium text-slate-300 transition-colors group-hover:text-white tracking-tight">+1 234 567 890</span>
@@ -132,17 +132,17 @@ export default function Footer() {
               </li>
               <li>
                 <a href="mailto:info@vestigo.com" className="group flex items-center gap-3 hover:text-white transition-all">
-                  <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center group-hover:bg-blue-600 transition-all border border-slate-700/50 flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center group-hover:bg-600 transition-all border border-slate-700/50 flex-shrink-0">
                     <Mail size={12} className="text-blue-400 group-hover:text-white" />
                   </div>
                   <span className="font-medium text-slate-300 transition-colors group-hover:text-white truncate">info@vestigo.com</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center border border-slate-700/50 flex-shrink-0">
-                  <MapPin size={12} className="text-blue-400" />
+                <div className="w-8 h-8 rounded-lg bg-slate-800/40 flex items-center justify-center group-hover:bg-600 transition-all border border-slate-700/50 flex-shrink-0">
+                  <MapPin size={12} className="text-blue-400 group-hover:text-white" />
                 </div>
-                <span className="font-medium text-slate-300 leading-snug">New York, NY</span>
+                <span className="font-medium text-slate-300 transition-colors group-hover:text-white leading-snug">New York, NY</span>
               </li>
             </ul>
           </div>
