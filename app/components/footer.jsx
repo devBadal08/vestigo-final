@@ -135,7 +135,7 @@ export default function Footer() {
 
             {/* Contact Us */}
             <div className="lg:col-span-1">
-              <h3 className="text-white font-bold text-[20x] uppercase tracking-[0.2em] mb-5 relative inline-block">
+              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                 Contact Us
                 <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
