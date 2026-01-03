@@ -255,7 +255,7 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] -ml-48 -mb-48" />
           <div className="relative z-10">
             <h2 className="text-4xl md:text-[5rem] font-bold text-white mb-10 tracking-tighter leading-tight">Ready to secure <br />your journey?</h2>
-            <Link href="/contacts" className="inline-flex items-center gap-3 bg-white text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all">
               Contact Our Experts <ArrowRight />
             </Link>
           </div>

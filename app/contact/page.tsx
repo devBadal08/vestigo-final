@@ -1,12 +1,62 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook, Loader2 } from 'lucide-react';
 
 const ContactPage = () => {
+  // ---------------------------------------------------------
+  // 1. Logic & State (Backend Connection)
+  // ---------------------------------------------------------
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' or 'error'
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus(null);
+
+    try {
+      // Ensure this URL matches your Laravel API
+      const response = await fetch('http://localhost:8000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // ---------------------------------------------------------
+  // 2. Visual Design (UI)
+  // ---------------------------------------------------------
   return (
     <main className="min-h-screen bg-white pt-20">
+      
       {/* Header Section */}
       <section className="bg-slate-50 py-20 px-6 border-b border-slate-100">
         <div className="max-w-7xl mx-auto text-center">
@@ -86,14 +136,39 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Right Side: Contact Form */}
+          {/* Right Side: Contact Form (Functional) */}
           <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-blue-500/5 border border-slate-100">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            
+            {/* Success/Error Status Messages */}
+            {status === 'success' && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 flex items-center gap-2"
+              >
+                <span className="font-bold">Success!</span> Message sent. We will contact you soon.
+              </motion.div>
+            )}
+            {status === 'error' && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-red-50 text-red-700 rounded-xl border border-red-200"
+              >
+                Something went wrong. Please try again later.
+              </motion.div>
+            )}
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 ml-1">Full Name</label>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     placeholder="John Doe" 
                     className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                   />
@@ -102,6 +177,10 @@ const ContactPage = () => {
                   <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="john@example.com" 
                     className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                   />
@@ -110,25 +189,39 @@ const ContactPage = () => {
 
               <div className="space-y-2">
                 <label className="text-sm font-bold text-slate-700 ml-1">Subject</label>
-                <select className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all">
-                  <option>General Inquiry</option>
-                  <option>Claims Support</option>
-                  <option>New Policy Inquiry</option>
-                  <option>Partnership</option>
-                </select>
+                <input 
+                  type="text" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Project Inquiry / Partnership" 
+                  className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-bold text-slate-700 ml-1">Message</label>
                 <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows={4} 
                   placeholder="How can we help you?" 
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
                 ></textarea>
               </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-3 group">
-                Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                   <>Sending... <Loader2 className="animate-spin" size={20} /></>
+                ) : (
+                   <>Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
+                )}
               </button>
             </form>
           </div>
@@ -136,17 +229,19 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Embedded Map Placeholder */}
+      {/* Map Section (Using the better Grayscale version) */}
       <section className="px-6 pb-24">
-        <div className="max-w-7xl mx-auto h-[450px] bg-slate-100 rounded-[3rem] overflow-hidden border border-slate-200 relative">
-          <div className="absolute inset-0 flex items-center justify-center text-slate-400">
-             <div className="text-center">
-                <MapPin size={48} className="mx-auto mb-4 opacity-20" />
-                <p className="font-bold">Interactive Google Map Integration</p>
-                <p className="text-sm">Embed your office location here</p>
-             </div>
-          </div>
-          {/* Yahan Google Map iframe add kar sakte hain */}
+        <div className="max-w-7xl mx-auto h-[450px] bg-slate-100 rounded-[3rem] overflow-hidden border border-slate-200 relative shadow-lg">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9367468652423!2d72.5065!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1703952000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale hover:grayscale-0 transition-all duration-500"
+          ></iframe>
         </div>
       </section>
     </main>

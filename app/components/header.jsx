@@ -152,6 +152,7 @@ const NAV_DATA = [
     ],
   },
   { name: 'Insights', href: '/blogs' },
+  
 ];
 
 export default function Header() {
@@ -230,7 +231,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-4">
               <PhoneCall size={16} className="text-slate-400" />
-              <Link href="/contacts" className="bg-[#1C2A7D] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#2F6BFF]">CONTACT</Link>
+              <Link href="/contact" className="bg-[#1C2A7D] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#2F6BFF]">CONTACT</Link>
             </div>
             <button onClick={() => setIsMobileOpen(true)} className="lg:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition">
               <Menu size={20} className="text-[#1C2A7D]" />
