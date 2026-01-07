@@ -31,46 +31,46 @@ export default function CompanyOverview() {
     <main ref={containerRef} className="bg-white overflow-hidden">
       
       {/* 1. PREMIUM DARK HERO SECTION */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
-        {/* Animated Background Gradients */}
-        <div className="absolute inset-0 z-0">
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }} 
-            transition={{ duration: 10, repeat: Infinity }} 
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]" 
-          />
-          <motion.div 
-            animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }} 
-            transition={{ duration: 15, repeat: Infinity }} 
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-[100px]" 
-          />
-        </div>
+     {/* 1. PREMIUM DARK HERO SECTION WITH BACKGROUND IMAGE */}
+<section className="relative mt-20 h-[85vh] flex items-center justify-center overflow-hidden">
+  
+  {/* Background Image Container */}
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="/aboutus.jpeg" // Make sure image is in your public folder
+      alt="About Us Background"
+      className="w-full h-full object-cover"
+    />
+    {/* Dark Overlay - Text visibility ke liye zaroori hai */}
+    {/* <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[0px]" /> */}
+  </div>
 
-        <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }} 
-            animate={{ scale: 1, opacity: 1 }} 
-            className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
-          >
-            <Sparkles size={16} /> SECURING YOUR FUTURE SINCE 2010
-          </motion.div>
-          
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
-            We Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience.</span>
-          </h1>
-          
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Vestigo isn't just insurance—it's a safety shield for your dreams. 
-            We turn uncertainty into opportunity through trust and technology.
-          </p>
-          
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-             <Link href="/company/whoweare" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
-                Learn Who We Are <ArrowRight size={18} />
-             </Link>
-          </div>
-        </motion.div>
-      </section>
+  {/* Content */}
+  {/* <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
+    <motion.div 
+      initial={{ scale: 0.8, opacity: 0 }} 
+      animate={{ scale: 1, opacity: 1 }} 
+      className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+    >
+      <Sparkles size={16} /> SECURING YOUR FUTURE SINCE 2010
+    </motion.div>
+    
+    <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+      We Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience.</span>
+    </h1>
+    
+    <p className="text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
+      Vestigo isn't just insurance—it's a safety shield for your dreams. 
+      We turn uncertainty into opportunity through trust and technology.
+    </p>
+    
+    <div className="mt-10 flex flex-wrap justify-center gap-4">
+       <Link href="/company/whoweare" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+          Learn Who We Are <ArrowRight size={18} />
+       </Link>
+    </div>
+  </motion.div> */}
+</section>
 
       {/* 2. STATS GRID (Overlap Effect) */}
       <section className="relative z-20 -mt-16 px-6">
