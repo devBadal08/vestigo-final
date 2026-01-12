@@ -68,29 +68,30 @@ const IndustriesHome = () => {
     <div className="min-h-screen bg-white font-sans text-slate-900">
       
       {/* 1. Global Hero Section */}
-      <section className="relative bg-[#0a192f] py-28 px-6 overflow-hidden">
+      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
+         style={{ backgroundImage: "url('/product.jpeg')" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
-        <div className="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12">
+        <div className="max-w-3xl mx-auto  flex flex-col mr-170 ml-8 lg:flex-row items-center gap-12">
           <div className="flex-1 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold mb-6 border border-blue-500/20 uppercase tracking-widest">
+            {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold mb-6 border border-blue-500/20 uppercase tracking-widest">
               <FontAwesomeIcon icon={faGlobe} /> Global Enterprise Solutions
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            </div> */}
+            {/* <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Scaling <span className="text-blue-500">Industries</span> <br /> 
               with Intelligence.
-            </h1>
-            <p className="text-lg text-slate-400 max-w-xl mb-10">
+            </h1> */}
+            <p className="text-xl text-white mt-50 mr-40 leading-relaxed">
               Vestigo Enterprise Suite provides specialized technology stacks for the world's most demanding industrial sectors. Efficiency, digitized.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-10">
               <Link href="/industries" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3">
                 Explore Solutions <FontAwesomeIcon icon={faArrowRight} />
               </Link>
             </div>
           </div>
 
-          <div className="flex-1 w-full lg:block hidden">
+          {/* <div className="flex-1 w-full lg:block hidden">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-30 animate-pulse"></div>
               <div className="relative bg-slate-800 rounded-2xl p-6 border border-white/10">
@@ -107,7 +108,7 @@ const IndustriesHome = () => {
                   </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

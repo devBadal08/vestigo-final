@@ -58,7 +58,7 @@ const ContactPage = () => {
     <main className="min-h-screen bg-white pt-20">
       
       {/* Header Section */}
-      <section className="bg-slate-50 py-20 px-6 border-b border-slate-100">
+      <section className="bg-[#0F172A] py-20 px-6 border-b border-slate-100">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -67,10 +67,10 @@ const ContactPage = () => {
           >
             Connect With Us
           </motion.div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
             Let's Start a <span className="text-blue-600">Conversation</span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Aapke business ki security hamari priority hai. Reach out to our experts today for customized risk management solutions.
           </p>
         </div>

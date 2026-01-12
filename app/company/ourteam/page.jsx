@@ -83,7 +83,8 @@ export default function OurTeam() {
     <main ref={containerRef} className="bg-white overflow-hidden">
       
       {/* 1. NEW HERO SECTION (Dark Premium Style) */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
+     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
+         style={{ backgroundImage: "url('/ourteam.jpeg')" }}>
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 z-0">
           <motion.div 
@@ -99,24 +100,24 @@ export default function OurTeam() {
         </div>
 
         <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
-          <motion.div 
+          {/* <motion.div 
             initial={{ scale: 0.8, opacity: 0 }} 
             animate={{ scale: 1, opacity: 1 }} 
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
           >
             <Sparkles size={16} /> MEET THE EXPERTS
-          </motion.div>
+          </motion.div> */}
           
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+          {/* <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
             The Faces Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Vestigo.</span>
-          </h1>
+          </h1> */}
           
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Our team consists of seasoned professionals dedicated to securing your dreams 
-            and protecting your business interests through trust and precision.
+          <p className="text-xl  text-black-400 max-w-2xl mr-185 mt-50 mx-auto leading-relaxed">
+            Our team consists of seasoned professionals dedicated to securing your-dreams 
+              and protecting your business interests through trust and precision.
           </p>
           
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap mr-100 gap-4">
              <Link href="/contacts" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all">
                 Connect with Us <ArrowRight size={18} />
              </Link>

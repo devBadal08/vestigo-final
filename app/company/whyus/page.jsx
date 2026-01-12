@@ -46,30 +46,30 @@ export default function CompanyOverview() {
   </div>
 
   {/* Content */}
-  {/* <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
-    <motion.div 
+  <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
+    {/* <motion.div 
       initial={{ scale: 0.8, opacity: 0 }} 
       animate={{ scale: 1, opacity: 1 }} 
       className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
     >
-      <Sparkles size={16} /> SECURING YOUR FUTURE SINCE 2010
-    </motion.div>
+      {/* <Sparkles size={16} /> SECURING YOUR FUTURE SINCE 2010 */}
+    {/* </motion.div> */}
     
-    <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+    {/* <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
       We Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience.</span>
-    </h1>
+    </h1> */}
     
-    <p className="text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
+    <p className="text-xl text-slate-200 mr-185 mt-50 max-w-2xl mx-auto leading-relaxed">
       Vestigo isn't just insurance—it's a safety shield for your dreams. 
       We turn uncertainty into opportunity through trust and technology.
     </p>
     
-    <div className="mt-10 flex flex-wrap justify-center gap-4">
+    <div className="mt-10 flex flex-wrap mr-90 gap-4">
        <Link href="/company/whoweare" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
           Learn Who We Are <ArrowRight size={18} />
        </Link>
     </div>
-  </motion.div> */}
+  </motion.div>
 </section>
 
       {/* 2. STATS GRID (Overlap Effect) */}

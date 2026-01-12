@@ -126,46 +126,54 @@ export default function Solutions() {
       
      
 
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-[#0a192f]">
+      <section className="flex h-[95vh] flex items-center overflow-hidden bg-cover bg-no-repeat" 
+         style={{ backgroundImage: "url('/services.jpeg')" }}>
   
   {/* Background Glow Effect - Creates depth on the blue background */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] -z-0" />
+  {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] -z-0" /> */}
 
-  <div className="max-w-7xl mx-auto relative z-10 text-center">
+  <div className="ml-40 max-w-1x0 mx-auto relative z-10 mb-15 ">
     {/* Specialized Portfolio Badge */}
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 border border-blue-500/20"
     >
       <Sparkles size={16} /> Our Specialized Portfolio
-    </motion.div>
+    </motion.div> */}
     
     {/* Main Heading */}
-    <motion.h1 
+    {/* <motion.h1 
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter"
     >
       Precision <span className="text-blue-500">Protection.</span>
-    </motion.h1>
+    </motion.h1> */}
     
     {/* Description Text */}
-    <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+    <p className="text-xl text-white mt-140 mr-200 leading-relaxed">
       We don t offer generic plans. We engineer insurance architectures 
       specifically designed for your industry s DNA.
     </p>
 
     {/* --- GLASSMORPISM PILL FILTER --- */}
-    <div className="flex flex-wrap justify-center gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[2.5rem] w-fit mx-auto border border-white/10">
+    
+  </div>
+</section>
+      
+
+      {/* --- GRID SECTION --- */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+      <div className="flex-center ml-70 gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[2.5rem] w-fit border border-blue/10">
       {categories.map((cat) => (
         <button
           key={cat}
           onClick={() => setActiveCategory(cat)}
-          className={`relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
+          className={`relative px-10 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
             activeCategory === cat 
-            ? 'text-white' 
-            : 'text-slate-400 hover:text-white'
+            ? 'text-black' 
+            : 'text-black hover:text-black'
           }`}
         >
           {activeCategory === cat && (
@@ -179,15 +187,9 @@ export default function Solutions() {
         </button>
       ))}
     </div>
-  </div>
-</section>
-      
-
-      {/* --- GRID SECTION --- */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
         <motion.div 
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
         >
           <AnimatePresence mode='popLayout'>
             {filteredSolutions.map((item, index) => (
