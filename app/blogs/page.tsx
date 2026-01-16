@@ -1,11 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+type Post = {
+  id: number
+  title: string
+  slug: string
+  content: string
+  thumbnail?: string | null
+}
+
 // 1. Function to fetch data from Laravel
-async function getPosts() {
-  // Ensure this URL matches your Laravel server
+async function getPosts(): Promise<{ data: Post[] }> {
   const res = await fetch('http://127.0.0.1:8000/api/posts', {
-    cache: 'no-store', // Ensures dynamic updates (disables caching)
+    cache: 'no-store',
   });
 
   if (!res.ok) {

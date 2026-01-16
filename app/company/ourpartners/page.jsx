@@ -56,7 +56,7 @@ export default function Partners() {
           </h1>
           
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Vestigo collaborates with India's top insurance providers to ensure our clients 
+            Vestigo collaborates with India&apos;s top insurance providers to ensure our clients 
             receive the best premiums and expedited claim settlements.
           </p>
           
