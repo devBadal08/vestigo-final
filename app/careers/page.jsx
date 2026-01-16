@@ -113,7 +113,7 @@ const CareersPage = () => {
           </div>
 
           <div className="mt-16 text-center p-12 bg-white rounded-[2rem] border border-dashed border-slate-300">
-            <h4 className="text-xl font-bold text-slate-800 mb-2">Don't see a perfect fit?</h4>
+            <h4 className="text-xl font-bold text-slate-800 mb-2">Don&apos;t see a perfect fit?</h4>
             <p className="text-slate-500 mb-6">Apna CV humein bhej dijiye, hum future opportunities ke liye contact karenge.</p>
             <a href="mailto:careers@vestigo.in" className="text-blue-600 font-bold hover:underline underline-offset-4">
               careers@vestigo.in

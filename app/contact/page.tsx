@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook, Loader2 } from 'lucide-react';
 
@@ -15,13 +15,15 @@ const ContactPage = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState(null); // 'success' or 'error'
+  const [status, setStatus] = useState<'success' | 'error' | null>(null); // 'success' or 'error'
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus(null);
@@ -68,7 +70,7 @@ const ContactPage = () => {
             Connect With Us
           </motion.div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
-            Let's Start a <span className="text-blue-600">Conversation</span>
+            Let&apos;s Start a <span className="text-blue-600">Conversation</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Aapke business ki security hamari priority hai. Reach out to our experts today for customized risk management solutions.
@@ -237,7 +239,7 @@ const ContactPage = () => {
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
-            allowFullScreen="" 
+            allowFullScreen
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             className="grayscale hover:grayscale-0 transition-all duration-500"
