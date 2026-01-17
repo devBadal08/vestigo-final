@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#020420]">
       {/* 1. Video Background Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute top-10 left-0 right-0 bottom-0 z-0">
         {/* Dark overlay to pop the white text */}
         <div className="absolute inset-0 bg-black/20 z-10" /> 
         <div className="absolute inset-0 bg-gradient-to-b from-[#020420]/80 via-transparent to-[#020420] z-10" />

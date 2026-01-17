@@ -53,7 +53,6 @@ export default function Footer() {
                 alt="Vestigo Logo"
                 width={110}
                 height={30}
-                className="invert opacity-90"
               />
               <p className="text-[13px] leading-relaxed pr-2 text-slate-300">
                 Innovative digital insurance solutions protecting businesses worldwide.
